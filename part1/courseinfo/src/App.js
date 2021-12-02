@@ -1,29 +1,30 @@
 import React from 'react'
 
-const Header = (props) => {
-  return <h1>{props.course}</h1>
+const Header = (props) => <h1>{props.courseName}</h1>
+
+const Content = (props) => {
+  return (
+    <>
+      <Part part={props.parts[0]} />
+      <Part part={props.parts[1]} />
+      <Part part={props.parts[2]} />
+    </>
+  )
 }
 
 const Part = (props) => (
   <p>
-    {props.name} {props.exercises}
+    {props.part.name} {props.part.exercises}
   </p>
 )
 
-const Content = (props) => {
-  console.log(props)
-  return props.parts.map((part) => (
-    <Part name={part.name} exercises={part.exercises} key={part.name} />
-  ))
-}
-
 const Total = (props) => {
-  let exercises = 0
-  props.parts.forEach((part) => {
-    exercises += part.exercises
-  })
-
-  return <p>Number of exercises {exercises}</p>
+  const [part1, part2, part3] = props.parts
+  return (
+    <p>
+      Number of exercises {part1.exercises + part2.exercises + part3.exercises}
+    </p>
+  )
 }
 
 const App = () => {
@@ -39,18 +40,18 @@ const App = () => {
         exercises: 7,
       },
       {
-        name: 'State of component',
+        name: 'State of a component',
         exercises: 14,
       },
     ],
   }
 
   return (
-    <div>
-      <Header course={course.name} />
+    <>
+      <Header courseName={course.name} />
       <Content parts={course.parts} />
       <Total parts={course.parts} />
-    </div>
+    </>
   )
 }
 
