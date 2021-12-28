@@ -12,7 +12,7 @@ part1\
 &nbsp;&nbsp;&nbsp;&nbsp;unicafe\
 &nbsp;&nbsp;&nbsp;&nbsp;anecdotes\
 part2\
+&nbsp;&nbsp;&nbsp;&nbsp;countriesdata\
+&nbsp;&nbsp;&nbsp;&nbsp;courseinfo\
 &nbsp;&nbsp;&nbsp;&nbsp;phonebook\
-&nbsp;&nbsp;&nbsp;&nbsp;countries\
-&nbsp;&nbsp;&nbsp;&nbsp;...\
 ....
