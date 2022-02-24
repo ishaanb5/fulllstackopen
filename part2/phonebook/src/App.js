@@ -16,8 +16,6 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([])
   const [notification, setNotification] = useState(null)
 
-  //#endregion
-
   // #region local variables
   let existingContact
   //#endregion
@@ -28,7 +26,6 @@ const App = () => {
       existingContact = obj1
       return true
     }
-
     return false
   }
 
@@ -80,6 +77,12 @@ const App = () => {
               type: 'success',
             })
           )
+          .catch((error) =>
+            setNotification({
+              message: error.response.data.message,
+              type: 'error',
+            })
+          )
       }
     } else {
       contactServices
@@ -93,6 +96,13 @@ const App = () => {
             type: 'success',
           })
         )
+        .catch((error) => {
+          console.log(error)
+          setNotification({
+            message: error.response.data.error,
+            type: 'error',
+          })
+        })
     }
 
     Object.getOwnPropertyNames(contactData).forEach(

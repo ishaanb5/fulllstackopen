@@ -1,5 +1,7 @@
 import React from 'react'
 
+// there are three types of notificatios - success, error and alert.
+
 const Notification = ({ notification }) => {
   //#region style definitions
   const successNotification = {
@@ -10,6 +12,7 @@ const Notification = ({ notification }) => {
     padding: 10,
     fontSize: 20,
     marginBottom: 15,
+    whiteSpace: 'pre-line',
   }
 
   const alertNotification = {
@@ -20,12 +23,16 @@ const Notification = ({ notification }) => {
     padding: 10,
     fontSize: 20,
     marginBottom: 15,
+    whiteSpace: 'pre-line',
   }
   //#endregion
 
   if (notification === null) return null
-  const { message, type } = notification
-  return message === null ? null : (
+  let { message, type } = notification
+
+  if (!message) return null
+  message = message.replace('.', '.\n')
+  return (
     <div style={type === 'success' ? successNotification : alertNotification}>
       {message}
     </div>
