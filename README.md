@@ -4,7 +4,6 @@ The project contains solutions to all the course exercise of Full Stack Open cou
 
 ## File Structure
 
-- Answers for parts 0-2 of the course are in this repository.
 - Answer for part 3 are present in its own [repository]('https://github.com/ishaanb5/fullstackopen-part3') that has been added as a submodule for reference.
 - The file structure being used is as follows:
 
@@ -18,4 +17,5 @@ part2\
 &nbsp;&nbsp;&nbsp;&nbsp;courseinfo\
 &nbsp;&nbsp;&nbsp;&nbsp;phonebook\
 part3\
+part4\
 ....
