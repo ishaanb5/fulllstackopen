@@ -1,10 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYyNDY4YTRlZTIzYjA3NTgxNDVkMjNlOSIsImlhdCI6MTY0OTA5MjY1OCwiZXhwIjoxNjQ5MDk2MjU4fQ.Zr-iAJXeoqK1a8X-CBM9323tFHesqILwksfdQXtS-i4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI2MjQ2OGI2ZjljZTI1OWJjMjUxZmJhZDUiLCJpYXQiOjE2NDk0OTgxMzUsImV4cCI6MTY0OTUwMTczNX0.jTUM1O0Ah3HBaKaoho1bqDNRINczugQDMiK3MBqMWjI
 
 {
-  "title": "sample blog 24 ",
-  "author": "sample author 24",
-  "url": "https://sampleurl.com/sample",
-  "likes": 12
+  "title": "Microservices and the First Law of Distributed Objects",
+  "author": "Martin Fowler",
+  "url": "https://www.martinfowler.com/articles/distributed-objects-microservices.html",
+  "likes": 3
 }

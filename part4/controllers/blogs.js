@@ -17,8 +17,13 @@ blogRouter
     await user.save()
 
     blog.user = user._id
-    const savedBlog = await blog.save()
-    response.status(201).json(savedBlog)
+    await blog.save()
+
+    const populatedSavedBlog = await Blog.findById(blog.id).populate('user', {
+      username: 1,
+      name: 1,
+    })
+    response.status(201).json(populatedSavedBlog)
   })
 
 blogRouter
@@ -30,7 +35,11 @@ blogRouter
       ? response.status(404).end()
       : (blogToUpdate.likes = request.body.likes)
     await blogToUpdate.save()
-    response.status(201).json(blogToUpdate)
+    const populatedBlogToUpdate = await Blog.findById(blogToUpdate.id).populate(
+      'user',
+      { username: 1, name: 1 }
+    )
+    response.status(201).json(populatedBlogToUpdate)
   })
   .delete(async (request, response) => {
     const currentUser = request.user
