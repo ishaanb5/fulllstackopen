@@ -19,4 +19,7 @@ part2\
 part3\
 part4\
 part5\
+part6\
+&nbsp;&nbsp;&nbsp;&nbsp;redux-anecdotes\
+&nbsp;&nbsp;&nbsp;&nbsp;unicafe-redux\
 ....
