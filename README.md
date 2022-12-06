@@ -22,4 +22,9 @@ part5\
 part6\
 &nbsp;&nbsp;&nbsp;&nbsp;redux-anecdotes\
 &nbsp;&nbsp;&nbsp;&nbsp;unicafe-redux\
+part7\
+&nbsp;&nbsp;&nbsp;&nbsp;routed-anecdotes\
+&nbsp;&nbsp;&nbsp;&nbsp;country-hook\
+&nbsp;&nbsp;&nbsp;&nbsp;ultimate-hooks\
+&nbsp;&nbsp;&nbsp;&nbsp;bloglist\
 ....

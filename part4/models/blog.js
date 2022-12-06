@@ -20,6 +20,7 @@ const blogSchema = new mongoose.Schema(
       ref: 'User',
     },
     likes: { type: Number, default: 0 },
+    comments: [String],
   },
   {
     toJSON: {
@@ -31,7 +32,7 @@ const blogSchema = new mongoose.Schema(
         return retObj
       },
     },
-  }
+  },
 )
 
 // setting likes to zero if null is received

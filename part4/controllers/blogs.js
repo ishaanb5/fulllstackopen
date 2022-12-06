@@ -37,7 +37,7 @@ blogRouter
     await blogToUpdate.save()
     const populatedBlogToUpdate = await Blog.findById(blogToUpdate.id).populate(
       'user',
-      { username: 1, name: 1 }
+      { username: 1, name: 1 },
     )
     response.status(201).json(populatedBlogToUpdate)
   })
@@ -52,5 +52,17 @@ blogRouter
     await Blog.findByIdAndDelete(request.params.id)
     response.status(204).end()
   })
+
+blogRouter.post('/:id/comments', async (request, response) => {
+  const { id } = request.params
+  const { comment } = request.body
+
+  const blog = await Blog.findById(id)
+  blog.comments.push(comment)
+
+  const updatedBlog = await blog.save()
+
+  return response.status(201).json(updatedBlog)
+})
 
 module.exports = blogRouter
